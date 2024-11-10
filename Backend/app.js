@@ -5,10 +5,20 @@ const authRoutes = require("./routes/authRoutes");
 const todoRoutes = require("./routes/todoRoutes");
 const cors = require("cors");
 dotenv.config();
-
-connectdb();
-
 const app = express();
+app.use(express.json());
+
+
+const db=async ()=>{
+    try{
+        await connectdb();
+        return "DB Connected";
+    }
+    catch(err){
+        console.error(err.message);
+    }
+}
+db();
 
 app.use(cors({
     // origin: 'http://localhost:3000',
@@ -16,9 +26,19 @@ app.use(cors({
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
     credentials: true
 }));
-app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api", todoRoutes);
+app.get('/db', async(req,res)=>{
+    try{
+        const dbx=await db();
+        console.log("c", dbx);
+        res.json({success:true, message:"DB Connected!"});
+
+    }
+    catch(err){
+        res.json({success:false, message:err.message});
+    }
+});
 app.get('/x', (req, res) => {
     res.json("ok");
 })
