@@ -2,23 +2,35 @@
 
 This project is a Todo App built with a React frontend and a Node.js and MongoDB backend. It allows users to manage their tasks efficiently by adding, updating, and deleting todos. Authentication and authorization are implemented to ensure task management is restricted to authenticated users.
 
+
+
 **Technologies Used**
+
 
 **Frontend**
 
-  -React: For building the UI components and managing state.
-  -Tailwind CSS: For styling the components with utility-first CSS.
-  -Axios: For handling HTTP requests to communicate with the backend.
+-React: For building the UI components and managing state.
+
+-Tailwind CSS: For styling the components with utility-first CSS.
+
+-Axios: For handling HTTP requests to communicate with the backend.
+
 
 **Backend**
 
-  -Node.js with Express: To create RESTful APIs and handle requests.
-  -MongoDB: A NoSQL database for storing user and todo data.
-  -Mongoose: An ODM (Object Data Modeling) library for MongoDB, used to manage database schemas and operations.
+-Node.js with Express: To create RESTful APIs and handle requests.
+
+-MongoDB: A NoSQL database for storing user and todo data.
+
+-Mongoose: An ODM (Object Data Modeling) library for MongoDB, used to manage database schemas and operations.
+
 
 **JWT (JSON Web Token):** For user authentication and session management.
 
 **bcrypt:** For password hashing to secure user passwords.
+
+
+
 
 **Prerequisites**
 
@@ -29,6 +41,8 @@ MongoDB: Install MongoDB and ensure it’s running, or use a MongoDB cloud servi
 npm: Ensure npm is installed, which comes with Node.js.
 
 
+
+
 **Running the Backend**
 
 **Clone the Repository:**
@@ -36,6 +50,7 @@ npm: Ensure npm is installed, which comes with Node.js.
 1.git clone - https://github.com/your-username/todo-app.git
 
 cd todo-app
+
 
 2.Navigate to the Backend Directory: cd backend
 
