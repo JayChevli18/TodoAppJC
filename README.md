@@ -4,10 +4,12 @@ This project is a Todo App built with a React frontend and a Node.js and MongoDB
 
 **Technologies Used**
 **Frontend**
+
   -React: For building the UI components and managing state.
   -Tailwind CSS: For styling the components with utility-first CSS.
   -Axios: For handling HTTP requests to communicate with the backend.
 **Backend**
+
   -Node.js with Express: To create RESTful APIs and handle requests.
   -MongoDB: A NoSQL database for storing user and todo data.
   -Mongoose: An ODM (Object Data Modeling) library for MongoDB, used to manage database schemas and operations.
