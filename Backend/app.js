@@ -12,7 +12,7 @@ const app=express();
 
 app.use(cors({
     // origin: 'http://localhost:3000',
-    origin: 'https://todo-app-jc.vercel.app/',
+    origin: 'https://todo-app-jc-frontend.vercel.app',
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
     credentials: true
 }));
