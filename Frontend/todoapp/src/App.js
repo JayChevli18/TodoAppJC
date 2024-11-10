@@ -2,8 +2,10 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from './components/Auth/Login';
 import Signup from './components/Auth/Signup';
-import Home from './components/Home';
 import PrivateRoute from './components/PrivateRoute';
+import TodoList from './components/Todo/TodoList';
+import AddTodo from './components/Todo/AddTodo';
+import EditTodo from './components/Todo/EditTodo';
 
 function App() {
     return (
@@ -15,7 +17,23 @@ function App() {
                     path="/home"
                     element={
                         <PrivateRoute>
-                            <Home />
+                            <TodoList />
+                        </PrivateRoute>
+                    }
+                />
+                <Route
+                    path="/todo/add"
+                    element={
+                        <PrivateRoute>
+                            <AddTodo />
+                        </PrivateRoute>
+                    }
+                />
+                <Route
+                    path="/todo/edit/:id"
+                    element={
+                        <PrivateRoute>
+                            <EditTodo />
                         </PrivateRoute>
                     }
                 />

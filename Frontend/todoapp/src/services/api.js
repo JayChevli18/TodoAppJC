@@ -9,7 +9,7 @@ const API = axios.create({
 
 API.interceptors.request.use(
     (config) => {
-        const token = localStorage.getItem('token'); // Assuming you're storing token in localStorage
+        const token = localStorage.getItem('token');
         if (token) {
             config.headers['Authorization'] = `Bearer ${token}`;
         }
@@ -26,5 +26,12 @@ export const logout = async () => {
         throw new Error('Logout failed');
     }
 };
+
+
+export const fetchTodos = () => API.get('/tasks');
+export const addTodo = (todoData) => API.post('/tasks', todoData);
+export const editTodo = (id, todoData) => API.put(`/tasks/${id}`, todoData);
+export const deleteTodo = (id) => API.delete(`/tasks/${id}`);
+export const searchTodo = (taskName) => API.get(`/tasks/find?taskName=${taskName}`);
 
 export default API;

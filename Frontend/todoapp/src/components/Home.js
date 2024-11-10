@@ -8,9 +8,9 @@ const Home = () => {
     const handleLogout = async () => {
         try {
             console.log(localStorage.getItem('token'));
-            await logout(); // Call the logout API
-            localStorage.removeItem('token'); // Clear the token from localStorage
-            navigate('/login'); // Redirect to the login page
+            await logout();
+            localStorage.removeItem('token');
+            navigate('/'); 
         } catch (err) {
             console.error('Error logging out:', err);
         }
