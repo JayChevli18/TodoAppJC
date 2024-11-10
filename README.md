@@ -1,4 +1,4 @@
-# TodoAppJC
+# TodoApp
 
 This project is a Todo App built with a React frontend and a Node.js and MongoDB backend. It allows users to manage their tasks efficiently by adding, updating, and deleting todos. Authentication and authorization are implemented to ensure task management is restricted to authenticated users.
 
