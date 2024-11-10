@@ -29,6 +29,7 @@ app.get('/', (req, res) => {
 app.post('/api/user', async (req, res) => {
     try {
         const { name, email, password } = req.body;
+        const user=await User.create({name, email, password});
         console.log(name, email, password);
         const token = email;
         res.status(201).json({ success: true, token });
