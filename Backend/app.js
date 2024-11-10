@@ -11,7 +11,8 @@ connectdb();
 const app=express();
 
 app.use(cors({
-    origin: 'http://localhost:3000',
+    // origin: 'http://localhost:3000',
+    origin: 'https://todo-app-jc.vercel.app/',
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
     credentials: true
 }));
