@@ -34,7 +34,7 @@ exports.getTask = async (req, res) => {
 exports.deleteTask = async (req, res) => {
     try {
         const task = await Todo.findOneAndDelete({ _id: req.params.id, user: req.user._id });
-        if (!task) 
+        if (!task)
             return res.status(404).json({ success: false, message: 'Task not found!' });
         res.status(200).json({ success: true, message: 'Task deleted successfully!' });
     } catch (error) {
@@ -57,8 +57,53 @@ exports.updateTask = async (req, res) => {
         );
 
         if (!task) return res.status(404).json({ success: false, message: 'Task not found' });
-        
+
         res.status(200).json({ success: true, data: task });
+    } catch (error) {
+        res.status(400).json({ success: false, error: error.message });
+    }
+};
+
+
+exports.getTaskById = async (req, res) => {
+    try {
+
+        const taskId = req.params.id;
+        const task = await Todo.findOne({
+            _id: taskId,
+            user: req.user._id
+        });
+
+        if (!task) {
+            return res.status(404).json({ success: false, message: 'Task not found' });
+        }
+
+        res.status(200).json({ success: true, data: task });
+    } catch (error) {
+        res.status(400).json({ success: false, error: error.message });
+    }
+};
+
+
+exports.searchTask = async (req, res) => {
+    try {
+//        console.log("Fsf");
+        const searchQuery = req.query.taskName;
+//        console.log("cc", searchQuery);
+        if (!searchQuery) {
+            return res.status(400).json({ success: false, message: 'Please provide a task name to search' });
+        }
+
+        const tasks = await Todo.find({
+            user: req.user._id,
+            taskName: { $regex: searchQuery, $options: 'i' } // Case-insensitive search
+        });
+
+        if (tasks.length === 0) {
+            return res.status(404).json({ success: false, message: 'No tasks found' });
+        }
+
+        res.status(200).json({ success: true, data: tasks });
     } catch (error) {
         res.status(400).json({ success: false, error: error.message });
     }
