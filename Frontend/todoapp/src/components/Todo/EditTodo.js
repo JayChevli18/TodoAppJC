@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { editTodo, fetchTodos } from '../../services/api';
+import './TodoStyle.css';
 
 const EditTodo = () => {
     const { id } = useParams();
@@ -38,9 +39,10 @@ const EditTodo = () => {
     };
 
     return (
-        <div>
-            <h1>Edit Task</h1>
-            <form onSubmit={handleSubmit}>
+        <div className="todo-container">
+            <form onSubmit={handleSubmit} className="todo-form">
+                <h1 className="todo-title">Edit Task</h1>
+
                 <div>
                     <label>Task Name</label>
                     <input
@@ -67,7 +69,7 @@ const EditTodo = () => {
                         <option value="Completed">Completed</option>
                     </select>
                 </div>
-                <button type="submit">Update Task</button>
+                <button type="submit" className="todo-button">Update Task</button>
             </form>
         </div>
     );

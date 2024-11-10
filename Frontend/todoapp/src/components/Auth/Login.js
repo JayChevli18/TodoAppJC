@@ -23,11 +23,17 @@ const Login = () => {
             setError('Login failed. Please check your credentials.');
         }
     };
+    const handleSignupNavigation = () => {
+        navigate('/signup');
+    };
 
     return (
         <div className="auth-container">
-            <h2 className="auth-title">Login</h2>
             <form className="auth-form" onSubmit={handleLogin}>
+                <h3 className="auth-head">Welcome To TodoApp!<hr></hr><p className='auth-head-below'>Manage Your Tasks Effortlessly</p></h3>
+
+                <h2 className="auth-title">Login</h2>
+
                 {error && <p className="error-text">{error}</p>}
                 <Input
                     type="email"
@@ -44,6 +50,12 @@ const Login = () => {
                     name="password"
                 />
                 <Button type="submit" label="Login" color="blue" />
+                <p className="signup-text">
+                    Don’t have an account?{' '}
+                    <span onClick={handleSignupNavigation} className="signup-link">
+                        Signup
+                    </span>
+                </p>
             </form>
         </div>
     );

@@ -1,30 +1,76 @@
 .auth-container {
-    max-width: 400px;
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff0080, #3300ff);
+    color: white;
     padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f9f9f9;
+    box-sizing: border-box;
+}
+
+.auth-head {
+    font-size: 24px;
+    text-align: center;
+}
+
+.auth-head-below {
+    font-size: 18px;
+    text-align: center;
 }
 
 .auth-title {
-    color: #333;
     font-size: 24px;
-    text-align: center;
     margin-bottom: 20px;
+    align-self: center;
 }
 
 .auth-form {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    color: black;
 }
 
-.error-text {
-    color: red;
-    margin-bottom: 10px;
+.auth-form input {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
 }
 
-.success-text {
-    color: green;
-    margin-bottom: 10px;
+
+.signup-text {
+    margin-top: 20px;
+    align-self: center;
 }
+
+
+.signup-link {
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.signup-link:hover {
+    color: #0056b3;
+}
+
+
+@media (max-width: 768px) {
+    .auth-form {
+        padding: 15px;
+    }
+
+    .auth-title {
+        font-size: 20px;
+    }
+}
+

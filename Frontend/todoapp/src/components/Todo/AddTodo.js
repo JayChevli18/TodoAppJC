@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { addTodo } from '../../services/api';
+import './TodoStyle.css';
 
 const AddTodo = () => {
     const [taskName, setTaskName] = useState('');
@@ -25,9 +26,10 @@ const AddTodo = () => {
     };
 
     return (
-        <div>
-            <h1>Add New Task</h1>
-            <form onSubmit={handleSubmit}>
+        <div className="todo-container">
+            <form onSubmit={handleSubmit} className="todo-form">
+              <h1 className="todo-title">Add New Task</h1>
+      
                 <div>
                     <label>Task Name</label>
                     <input
@@ -54,7 +56,7 @@ const AddTodo = () => {
                         <option value="Completed">Completed</option>
                     </select>
                 </div>
-                <button type="submit">Add Task</button>
+                <button type="submit" className="todo-button">Add Task</button>
             </form>
         </div>
     );

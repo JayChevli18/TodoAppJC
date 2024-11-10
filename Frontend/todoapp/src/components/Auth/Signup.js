@@ -19,7 +19,7 @@ const Signup = () => {
             await API.post('/auth/signup', { name, email, password });
             setSuccess('Signup successful! Redirecting to login...');
             setError('');
-            setTimeout(() => navigate('/login'), 2000);
+            setTimeout(() => navigate('/'), 2000);
         } catch (err) {
             setError('Signup failed. Please try again.');
             setSuccess('');
@@ -28,8 +28,9 @@ const Signup = () => {
 
     return (
         <div className="auth-container">
-            <h2 className="auth-title">Signup</h2>
             <form className="auth-form" onSubmit={handleSignup}>
+                <h2 className="auth-title">Signup</h2>
+
                 {error && <p className="error-text">{error}</p>}
                 {success && <p className="success-text">{success}</p>}
                 <Input

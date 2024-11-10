@@ -1,0 +1,262 @@
+.todo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff0080, #3300ff);
+    color: white;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+.todo-title {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 40px;
+    color: rgb(255, 255, 255);
+}
+
+.todo-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.todo-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    background: white;
+    padding: 28px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    color: black;
+}
+
+.todo-form label {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.todo-form input
+{
+    padding: 10px;
+    margin-top: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 95%;
+
+}
+.todo-form select {
+    padding: 10px;
+    margin-top: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+}
+
+.todo-button {
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.todo-button:hover {
+    background-color: #0056b3;
+}
+
+.todo-logout-button {
+    padding: 10px 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.todo-list {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+.todo-item {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    padding: 15px;
+}
+
+.todo-item h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.todo-item p {
+    font-size: 14px;
+    margin: 2px 0;
+}
+
+.search-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px 0;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .todo-title {
+        font-size: 20px;
+    }
+
+    .todo-form {
+        /* padding: 15px; */
+    }
+
+    .todo-item h3 {
+        font-size: 16px;
+    }
+
+    .todo-item p {
+        font-size: 12px;
+    }
+}
+
+
+
+.todo-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+.todo-item-title {
+    font-size: 20px;
+    margin: 0 0 8px;
+    color: #333;
+}
+
+.todo-item-desc {
+    font-size: 16px;
+    margin: 4px 0;
+}
+
+.todo-item-status, .todo-item-date {
+    font-size: 14px;
+    color: #555;
+}
+
+.todo-item-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.todo-item-button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    color: white;
+}
+
+.edit-button {
+    background-color: #000000;
+}
+
+.delete-button {
+    background-color: #ff1100;
+}
+
+.edit-button:hover {
+    background-color: #2d2f30;
+}
+
+.delete-button:hover {
+    background-color: #c82333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .todo-item {
+        padding: 10px;
+    }
+
+    .todo-item-title {
+        font-size: 18px;
+    }
+
+    .todo-item-desc, .todo-item-status, .todo-item-date {
+        font-size: 14px;
+    }
+
+    .todo-item-buttons {
+        flex-direction: column;
+    }
+
+    .todo-item-button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.controls-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    width: 45%;
+    justify-content: space-between;
+    padding: 15px;
+
+}
+
+.search-input {
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    justify-content: left;
+    align-self: flex-start;
+}
+
+.add-task-button, .logout-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-task-button {
+    background-color: #000000;
+    color: #fff;
+}
+
+.logout-button {
+    background-color: #ff1100;
+    color: #fff;
+}

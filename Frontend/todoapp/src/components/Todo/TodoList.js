@@ -4,6 +4,8 @@ import TodoItem from './TodoItem';
 import { useNavigate } from 'react-router-dom';
 import SearchTodo from './SearchTodo';
 import {logout} from '../../services/api';
+import './TodoStyle.css';
+
 const TodoList = () => {
     const [todos, setTodos] = useState([]);
     const [filteredTodos, setFilteredTodos] = useState([]);
@@ -58,26 +60,27 @@ const TodoList = () => {
     };
 
     return (
-        <div>
-            <h1>Todo List</h1>
-            <button onClick={() => navigate('/todo/add')}>Add Task</button>
-            <button
-                onClick={handleLogout}
-                style={{
-                    padding: '10px 20px',
-                    backgroundColor: 'red',
-                    color: 'white',
-                    border: 'none',
-                    cursor: 'pointer',
-                }}
-            >
-                Logout
-            </button>
-            <SearchTodo handleSearchResults={handleSearchResults} />
-            <div>
-            {filteredTodos.length > 0 ? (
+        <div className="todo-container">
+            <h1 className="todo-title">Todo List</h1>
+            <div className="controls-container">
+                <SearchTodo handleSearchResults={handleSearchResults} />
+
+                <button onClick={() => navigate('/todo/add')} className="add-task-button">
+                    Add Task
+                </button>
+                <button onClick={handleLogout} className="logout-button">
+                    Logout
+                </button>
+            </div>
+            <div className="todo-list">
+                {filteredTodos.length > 0 ? (
                     filteredTodos.map(todo => (
-                        <TodoItem key={todo._id} todo={todo} onDelete={handleDelete} onEdit={handleEdit} />
+                        <TodoItem
+                            key={todo._id}
+                            todo={todo}
+                            onDelete={handleDelete}
+                            onEdit={handleEdit}
+                        />
                     ))
                 ) : (
                     <p>No tasks found</p>
@@ -85,6 +88,7 @@ const TodoList = () => {
             </div>
         </div>
     );
+
 };
 
 export default TodoList;

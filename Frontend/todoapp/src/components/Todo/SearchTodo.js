@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './TodoStyle.css';
 
 const SearchTodo = ({ handleSearchResults }) => {
     const [searchQuery, setSearchQuery] = useState('');
@@ -10,15 +11,15 @@ const SearchTodo = ({ handleSearchResults }) => {
     };
 
     return (
-        <div>
+        <div className="search-container">
             <input
                 type="text"
                 placeholder="Search tasks by name..."
                 value={searchQuery}
                 onChange={handleSearchChange}
+                className="search-input"
             />
-        </div>
-    );
+        </div>);
 };
 
 export default SearchTodo;
