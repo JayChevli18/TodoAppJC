@@ -16,7 +16,7 @@ const todoSchema = new mongoose.Schema({
     },
     taskStatus: {
         type: String,
-        enum: ['Upcoming', 'In Progress', 'Completed'],
+        enum: ['Upcoming', 'Pending', 'In Progress', 'Completed'],
         default: 'Upcoming'
     },
     taskDateTime: {

@@ -42,3 +42,24 @@ exports.deleteTask = async (req, res) => {
     }
 };
 
+exports.updateTask = async (req, res) => {
+    try {
+        const { taskName, taskDesc, taskStatus } = req.body;
+
+        if (!taskName || !taskDesc) {
+            return res.status(400).json({ success: false, message: 'Task name and description are required' });
+        }
+
+        const task = await Todo.findOneAndUpdate(
+            { _id: req.params.id, user: req.user._id },
+            { taskName, taskDesc, taskStatus },
+            { new: true }
+        );
+
+        if (!task) return res.status(404).json({ success: false, message: 'Task not found' });
+        
+        res.status(200).json({ success: true, data: task });
+    } catch (error) {
+        res.status(400).json({ success: false, error: error.message });
+    }
+};
