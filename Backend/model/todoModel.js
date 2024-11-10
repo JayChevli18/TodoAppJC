@@ -16,11 +16,12 @@ const todoSchema = new mongoose.Schema({
     },
     taskStatus: {
         type: String,
-        required: true
+        enum: ['Upcoming', 'In Progress', 'Completed'],
+        default: 'Upcoming'
     },
     taskDateTime: {
         type: Date,
-        required: true
+        default: Date.now
     }
 }, { timestamps: true });
 
