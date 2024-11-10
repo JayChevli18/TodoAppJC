@@ -23,7 +23,9 @@ exports.signup=async(req, res)=>{
 exports.login = async (req, res) => {
     try {
         const { email, password } = req.body;
+        console.log("ok",email, password);
         const user = await User.findOne({ email });
+        console.log("ok", user);
         if (!user || !(await user.comparePassword(password))) {
             return res.status(401).json({ success: false, message: 'Invalid credentials' });
         }
